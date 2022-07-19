@@ -1,22 +1,22 @@
-import React, { useState ,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import "./Navbar.css"
 import { GiHamburgerMenu } from "react-icons/gi"
 
 import { FcSearch } from "react-icons/fc"
-import { AuthContext } from '../../context/AuthContext'
+import { QueryContext } from '../../context/QueryContext'
 
 
 const Navbar = () => {
 
     const [showMediaIcons, setShowMediaIcons] = useState(false)
 
-   
 
-     const {inputData, setInputData}=useContext(AuthContext)
 
-                
+    const { inputData, setInputData } = useContext(QueryContext)
 
-      
+
+
+
 
 
     return (
@@ -32,6 +32,7 @@ const Navbar = () => {
                     </h2>
                 </div>
                 {/* 2nd  menu part */}
+                {/*  */}
                 <div className={showMediaIcons ? "menu-link  mobile-menu-link" : "menu-link"} >
                     <ul>
                         <li>
@@ -101,11 +102,19 @@ const Navbar = () => {
                     {/* hamburger menu start */}
                     <div className='hamburger-menu'>
 
-                        <GiHamburgerMenu
+                        {/* <GiHamburgerMenu
                             style={{ cursor: "pointer" }}
                             onClick={() => { setShowMediaIcons(!showMediaIcons) }}
-                        />
+                        /> */}
+                        <div className='searchdiv'>
 
+                            <input type="text" value={inputData}
+
+                                placeholder="Search anythings..."
+                                onChange={(e) => { setInputData(e.target.value) }} />
+                            <FcSearch className='searchicon' />
+
+                        </div>
 
                     </div>
 
@@ -120,14 +129,7 @@ const Navbar = () => {
 
             {/* hero section */}
 
-            <section className='hero-section'>
 
-
-                <h1>hi hybrid</h1>
-
-
-
-            </section>
 
 
 
