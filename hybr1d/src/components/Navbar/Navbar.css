@@ -38,6 +38,7 @@ li {
   grid-column: 2/3;
   justify-content: start;
   align-items: center;
+  cursor: pointer;
 }
 
 .menu-link {
@@ -257,7 +258,7 @@ li {
   }
 
   .logo h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .social-media {
@@ -277,6 +278,23 @@ li {
   .hero-section h1 {
     font-size: 3.8rem;
   }
+
+  .social-media .hamburger-menu .searchdiv{
+
+     width: 200px;
+   
+   }
+   
+   .social-media .hamburger-menu .searchdiv input{
+       
+     width: 180px
+   
+   
+   
+   }
+
+
+
 }
 
 

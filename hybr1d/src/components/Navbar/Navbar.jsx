@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import "./Navbar.css"
-import { GiHamburgerMenu } from "react-icons/gi"
+
+import {useNavigate} from "react-router-dom"
 
 import { FcSearch } from "react-icons/fc"
 import { QueryContext } from '../../context/QueryContext'
@@ -10,7 +11,7 @@ const Navbar = () => {
 
     const [showMediaIcons, setShowMediaIcons] = useState(false)
 
-
+   const navigate=useNavigate()
 
     const { inputData, setInputData } = useContext(QueryContext)
 
@@ -25,7 +26,9 @@ const Navbar = () => {
             <nav className='main-nav'>
 
                 {/*  1st  logo part  */}
-                <div className="logo">
+                <div className="logo" 
+                 onClick={()=>navigate("/")}
+                >
                     <h2>
                         <span>H</span>ybr
                         <span>1</span>d

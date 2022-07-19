@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { QueryContext } from '../context/QueryContext'
+import {Link} from "react-router-dom"
 import "./SearchData.css"
 const SearchData = () => {
 
@@ -16,9 +17,9 @@ const SearchData = () => {
         <div className="dataResult">
           {queryData.slice(0, 15).map((value, key) => {
             return (
-              <a className="dataItem" href="/" target="_blank" key={value.id} >
+              <Link className="dataItem" to={`/infoData/${value.objectID}`}   >
                 <p>{value.title} </p>
-              </a>
+              </Link>
             );
           })}
         </div>
