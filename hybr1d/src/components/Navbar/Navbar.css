@@ -110,17 +110,6 @@ li {
   display: none;
 }
 
-.facebook {
-  color: #3b5998;
-}
-
-.instagram {
-  color: #c32aa3;
-}
-
-.youtube {
-  color: #ff0000;
-}
 
 /* hero section   */
 
@@ -197,7 +186,7 @@ li {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 
   .mobile-menu-link ul li:first-child {
@@ -312,4 +301,36 @@ li {
 .potfilioimg{
     width: 20px;
     height: 20px;
+}
+
+
+/* input div */
+
+.searchdiv{
+
+
+ border: 0.2px solid gray;
+ border-radius: 5px;
+ display: flex;
+ justify-content: space-between;
+ padding: 5px;
+ align-items: center;
+  width: 300px;
+
+}
+
+.searchdiv input{
+    
+  outline: none;
+  border: none;
+  width: 250px
+
+
+
+}
+
+.searchicon{
+
+   width: 15px;
+   height: 15px;
 }

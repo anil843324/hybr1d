@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import "./Navbar.css"
 import { GiHamburgerMenu } from "react-icons/gi"
 
-
+import { FcSearch } from "react-icons/fc"
 
 
 const Navbar = () => {
 
     const [showMediaIcons, setShowMediaIcons] = useState(false)
+
+    const [inputData, setInputData] = useState('')
 
 
     return (
@@ -25,8 +27,23 @@ const Navbar = () => {
                 {/* 2nd  menu part */}
                 <div className={showMediaIcons ? "menu-link  mobile-menu-link" : "menu-link"} >
                     <ul>
-
                         <li>
+                            <div className='searchdiv'>
+
+                                <input type="text" value={inputData}
+
+                                    placeholder="Search anythings..."
+                                    onChange={(e) => { setInputData(e.target.value) }} />
+                                <FcSearch className='searchicon' />
+
+                            </div>
+
+
+                        </li>
+
+
+
+                        {/* <li>
                             <a href="/">Home</a>
                         </li>
                         <li>
@@ -37,7 +54,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <a href="/">contact</a>
-                        </li>
+                        </li> */}
 
                     </ul>
 
@@ -48,6 +65,8 @@ const Navbar = () => {
                 <div className='social-media'>
 
                     <ul className='social-media-desktop'>
+
+
                         <li>
                             <a href="https://portfolio2-ten-chi.vercel.app/" target="_anil">
 
