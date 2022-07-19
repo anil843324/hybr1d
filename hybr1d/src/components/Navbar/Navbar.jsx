@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Navbar.css"
-import { FaLinkedin } from "react-icons/fa"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 
 
 
 const Navbar = () => {
 
+    const [showMediaIcons, setShowMediaIcons] = useState(false)
 
 
     return (
@@ -15,12 +16,14 @@ const Navbar = () => {
             <nav className='main-nav'>
 
                 {/*  1st  logo part  */}
-                <div className='logo'>
-                    <h1>Hybr1d</h1>
-
+                <div className="logo">
+                    <h2>
+                        <span>H</span>ybr
+                        <span>1</span>d
+                    </h2>
                 </div>
                 {/* 2nd  menu part */}
-                <div className='menu-link'>
+                <div className={showMediaIcons ? "menu-link  mobile-menu-link" : "menu-link"} >
                     <ul>
 
                         <li>
@@ -42,9 +45,9 @@ const Navbar = () => {
 
                 {/*  3rd social media links */}
 
-                <div className='socila-media'>
+                <div className='social-media'>
 
-                    <ul className='socila-media-destop'>
+                    <ul className='social-media-desktop'>
                         <li>
                             <a href="https://portfolio2-ten-chi.vercel.app/" target="_anil">
 
@@ -54,7 +57,7 @@ const Navbar = () => {
                         <li>
                             <a href="https://www.linkedin.com/in/anil-kumar-7311a3211/" target="_anil">
 
-                                <img src="./linkedin.png" alt="linkedinlogo" className='potfilioimg'/>
+                                <img src="./linkedin.png" alt="linkedinlogo" className='potfilioimg' />
 
                             </a>
                         </li>
@@ -68,6 +71,20 @@ const Navbar = () => {
 
                     </ul>
 
+
+                    {/* hamburger menu start */}
+                    <div className='hamburger-menu'>
+
+                        <GiHamburgerMenu
+                            style={{ cursor: "pointer" }}
+                            onClick={() => { setShowMediaIcons(!showMediaIcons) }}
+                        />
+
+
+                    </div>
+
+
+
                 </div>
 
 
@@ -80,7 +97,7 @@ const Navbar = () => {
             <section className='hero-section'>
 
 
-           <h1>hi hybrid</h1>
+                <h1>hi hybrid</h1>
 
 
 
