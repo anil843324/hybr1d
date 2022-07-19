@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState ,useContext } from 'react'
 import "./Navbar.css"
 import { GiHamburgerMenu } from "react-icons/gi"
 
 import { FcSearch } from "react-icons/fc"
+import { AuthContext } from '../../context/AuthContext'
 
 
 const Navbar = () => {
 
     const [showMediaIcons, setShowMediaIcons] = useState(false)
 
-    const [inputData, setInputData] = useState('')
+   
+
+     const {inputData, setInputData}=useContext(AuthContext)
+
+                
+
+      
 
 
     return (
