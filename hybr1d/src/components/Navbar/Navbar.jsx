@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom"
 
 import { FcSearch } from "react-icons/fc"
 import { QueryContext } from '../../context/QueryContext'
+import {IoMdClose} from "react-icons/io"
 
 
 const Navbar = () => {
@@ -45,27 +46,16 @@ const Navbar = () => {
 
                                     placeholder="Search anythings..."
                                     onChange={(e) => { setInputData(e.target.value) }} />
-                                <FcSearch className='searchicon' />
+
+                                    {
+                                        inputData ? <IoMdClose onClick={()=>{setInputData("")}}  className='searchicon' /> : <FcSearch className='searchicon' />
+                                    }
+                               
 
                             </div>
 
 
                         </li>
-
-
-
-                        {/* <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/">About</a>
-                        </li>
-                        <li>
-                            <a href="/">Services</a>
-                        </li>
-                        <li>
-                            <a href="/">contact</a>
-                        </li> */}
 
                     </ul>
 
@@ -130,10 +120,7 @@ const Navbar = () => {
 
             </nav>
 
-            {/* hero section */}
-
-
-
+          
 
 
 

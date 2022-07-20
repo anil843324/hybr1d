@@ -12,8 +12,8 @@ const SearchData = () => {
 
   return (
     <div className='showData'>
-
-      {queryData.length !== 0 && (
+         {/* queryData.length !== 0 */}
+      {inputData && (
         <div className="dataResult">
           {queryData.slice(0, 15).map((value, key) => {
             return (
