@@ -17,41 +17,9 @@ const Navbar = () => {
     const par = useParams()
     const [inputData, setInputData] = useState('');
 
-    const [queryData, setQueryData] = useState([]);
 
 
-
-    const queryUser = async () => {
-
-        try {
-            const response = await fetch(
-                `https://hn.algolia.com/api/v1/search?query=${inputData}`
-            );
-            const data = await response.json();
-            setQueryData(data.hits);
-
-        } catch (error) {
-            console.log(error)
-
-        }
-    };
-
-    useEffect(() => {
-
-        let timeout = setTimeout(() => {
-            queryUser()
-            console.log(queryData)
-        }, 1000)
-
-        return () => clearTimeout(timeout)
-
-    }, [inputData])
-
-    const handleEventid = (newsid) => {
-        console.log(newsid)
-
-
-    }
+   
 
 
 
@@ -146,34 +114,7 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* <SearchData/> */}
-
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-evenly',
-                gap: '1.3rem',
-                cursor: 'pointer'
-
-            }}>
-                {queryData.map((news) => {
-                    return (
-                        <div
-                            onClick={() => handleEventid(news.objectID)}
-                            style={{
-                                width: '180px',
-                                border: '2px solid black',
-                                margin: '2rem'
-                            }} key={news.objectID}>
-                            <h3>{news.title}</h3>
-                            <Link to={`/infodata/${news.objectID}`}>more info</Link>
-                        </div>
-                    )
-                })}
-                
-            </div>
-            
-
+        
 
         </>
     )

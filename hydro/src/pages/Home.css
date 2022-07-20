@@ -1,0 +1,13 @@
+.searchContienr{
+    display:flex;
+    flex-wrap: wrap;
+     justify-content: space-evenly;
+    gap: 1.3rem;
+    cursor: pointer;
+}
+.loadingSpinner {
+    display: block !important;
+    margin: 0 auto !important;
+    border-color: #36d7b7 !important;
+    margin-top: 100px !important;
+  }
