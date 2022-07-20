@@ -1,20 +1,30 @@
+.loadingSpinner{
+
+    display: block !important;
+    margin:0 auto !important;
+    border-color:#36D7B7 !important;
+    margin-top: 100px !important;
+
+  }
+
+
 .mainContainer{
  
      display: grid;
-     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-     /* margin-top: 20px; */
-    row-gap: 15px;
-    padding: 20px;
+     grid-template-columns: repeat(auto-fill, 250px);
+     
+     grid-gap: 20px;
+     padding: 20px;
+    place-content: center;
    
 }
-
 
 .childContainer{
 
     overflow: hidden;
     overflow-y: auto;
-  width: 230px;
-  height: 250px;
+  /* /* width: 230px; */
+  height: 300px; 
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 5px;
@@ -23,3 +33,4 @@
 .childContainer::-webkit-scrollbar {
     display: none;
   }
+
