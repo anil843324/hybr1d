@@ -1,26 +1,19 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState,useContext} from 'react'
 import "./Navbar.css"
-
 import { useNavigate, Link, useParams } from "react-router-dom"
-
 import { FcSearch } from "react-icons/fc"
-
 import { IoMdClose } from "react-icons/io"
-// import { InfoData } from '../InfoData'
-// import SearchData from '../SearchData'
+import { DataContext } from '../../context/DataContext'
 
 const Navbar = () => {
 
     const [showMediaIcons, setShowMediaIcons] = useState(false)
 
-    const fetchData = useNavigate()
+    const navigate = useNavigate()
+
     const par = useParams()
-    const [inputData, setInputData] = useState('');
 
-
-
-   
-
+    const {inputData, setInputData} = useContext(DataContext );
 
 
 

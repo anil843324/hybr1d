@@ -1,29 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useContext } from 'react'
 import "./Home.css"
 import { Link } from 'react-router-dom';
 import SyncLoader from "react-spinners/SyncLoader";
+import { DataContext } from '../context/DataContext';
 //<MoonLoader />
 const Home = () => {
 
     const [queryData, setQueryData] = useState([]);
-    const [loading, setLoading] = React.useState(true);
-    const [inputData, setInputData] = useState("a")
+    const [loading, setLoading] = React.useState(false);
+    
+    const {inputData} = useContext(DataContext)
     let [color, setColor] = useState("#36D7B7");
-
+    
 
 
     const queryUser = async () => {
 
+         
         try {
+            setLoading(true)
             const response = await fetch(
                 `https://hn.algolia.com/api/v1/search?query=${inputData}`
             );
             const data = await response.json();
             setQueryData(data.hits);
-            setLoading(!loading)
+            setLoading(false)
         } catch (error) {
-            console.log(error)
-            setLoading(!loading)
+            console.log("anil erro",error)
+           
         }
     };
 
@@ -32,7 +36,7 @@ const Home = () => {
         let timeout = setTimeout(() => {
             queryUser()
             console.log(queryData)
-        }, 1000)
+        }, 500)
 
         return () => clearTimeout(timeout)
 
@@ -44,12 +48,16 @@ const Home = () => {
 
     return (
         <>
-        //  {/* <SearchData/> */}
+          {/* <SearchData/> */}
       
-            {loading ? <SyncLoader color={color} loading={loading} className="loadingSpinner" size={30} /> : <div className='searchContienr' >
-                {queryData.map((news) => {
+            {loading ? <SyncLoader color={color}  className="loadingSpinner" size={20} /> : <div className='searchContienr' >
+                { queryData.length>0 && queryData.map((news) => {
                     return (
                         <>
+                        { news.title &&
+                        <div key={news.objectID}
+                        onClick={()=> handleDiv}
+                        >
                             <Link to={`/infodata/${news.objectID}`}>
                                 <div
 
@@ -62,7 +70,10 @@ const Home = () => {
 
                                 </div>
                             </Link>
-                        </>
+                        </div>
+
+                    }
+                    </>
                     )
                 })}
 
