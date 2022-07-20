@@ -1,0 +1,25 @@
+.mainContainer{
+ 
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+     /* margin-top: 20px; */
+    row-gap: 15px;
+    padding: 20px;
+   
+}
+
+
+.childContainer{
+
+    overflow: hidden;
+    overflow-y: auto;
+  width: 230px;
+  height: 250px;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 5px;
+}
+
+.childContainer::-webkit-scrollbar {
+    display: none;
+  }
