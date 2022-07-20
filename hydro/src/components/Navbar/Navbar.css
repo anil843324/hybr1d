@@ -30,6 +30,7 @@ li {
   grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-bottom: 50px;
 }
 
 .logo {
@@ -343,14 +344,16 @@ li {
     
   outline: none;
   border: none;
-  width: 250px
-
+  width: 250px;
+ padding: 7px;
+ font-size: 18px;
 
 
 }
 
 .searchicon{
    cursor: pointer;
-   width: 15px;
-   height: 15px;
+   width: 25px;
+   height: 25px;
+   margin-right: 20px;
 }

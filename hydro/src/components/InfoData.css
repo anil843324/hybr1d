@@ -7,8 +7,8 @@
 
 .mainContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-
+  grid-template-columns: repeat(auto-fill, 350px);
+  color: #ffff;
   grid-gap: 20px;
   padding: 20px;
   place-content: center;
@@ -18,10 +18,17 @@
   overflow: hidden;
   overflow-y: auto;
   /* /* width: 230px; */
-  height: 300px;
+  background: #7F7FD5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+  
+  height:350px;
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 5px;
+  padding: 15px;
+  font-size: 15px;
 }
 
 .childContainer::-webkit-scrollbar {
