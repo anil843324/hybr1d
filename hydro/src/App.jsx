@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      // routes in progress
       <Routes>
         <Route path='/' element={<Navbar/>}/>
         <Route path='/infodata/:id'  element={<InfoData/>}/>
