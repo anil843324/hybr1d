@@ -36,6 +36,7 @@ const InfoData = () => {
     console.log(id);
     return (
         <>
+           
 
 
             {loading ? <HashLoader color={color} loading={loading} className="loadingSpinner" size={70} /> : <div className='mainContainer'>
@@ -44,9 +45,9 @@ const InfoData = () => {
                     return (
 
                         <div key={ele.id} className="childContainer">
-                            <h2 >{ele.author}</h2>
-                            <h3 >{ele.text}</h3>
-
+                            <h2 >Title: {ele.title}</h2>
+                             <h2>Points: {ele.points}</h2>
+                            <div dangerouslySetInnerHTML={{ __html: ele.text }} />
                         </div>
                     );
                 })}

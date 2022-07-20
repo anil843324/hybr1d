@@ -10,11 +10,14 @@ function App() {
   return (
     <div >
        
-      <Navbar/>
+       <Navbar/>
+       
       <Routes>
+     
        <Route path='/' element={  <SearchData/> }/>
       
        <Route path='/infoData/:id' element={<InfoData />} />
+       
      
        </Routes>      
     </div>
