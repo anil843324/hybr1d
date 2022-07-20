@@ -8,10 +8,11 @@ function App() {
 
   return (
     <div className="App">
-      // routes in progress
+      <Navbar/>
       <Routes>
-        <Route path='/' element={<Navbar/>}/>
-        <Route path='/infodata/:id'  element={<InfoData/>}/>
+    
+        <Route path='/infodata/:id' element={<InfoData/>} />
+        
       </Routes>
     </div>
   )

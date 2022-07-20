@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import "./Navbar.css"
 
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link, useParams } from "react-router-dom"
 
 import { FcSearch } from "react-icons/fc"
 
@@ -14,7 +14,7 @@ const Navbar = () => {
     const [showMediaIcons, setShowMediaIcons] = useState(false)
 
     const fetchData = useNavigate()
-
+    const par = useParams()
     const [inputData, setInputData] = useState('');
 
     const [queryData, setQueryData] = useState([]);
@@ -49,8 +49,8 @@ const Navbar = () => {
 
     const handleEventid = (newsid) => {
         console.log(newsid)
-       
-        
+
+
     }
 
 
@@ -141,47 +141,42 @@ const Navbar = () => {
                                 placeholder="Search anythings..."
                                 onChange={(e) => { setInputData(e.target.value) }} />
                             <FcSearch className='searchicon' />
-
                         </div>
-
                     </div>
-
-
-
                 </div>
-
-
-
-
             </nav>
 
-          {/* <SearchData/> */}
-                        <div style={{
-                            display: 'flex',
-                            flexWrap:'wrap',
-                            justifyContent:'space-evenly',
-                            gap: '1.3rem',
-                            cursor: 'pointer'
+            {/* <SearchData/> */}
 
-                        }}>
-                        {queryData.map((news) => {
-                            return(
-                              <div 
-                              onClick={() => handleEventid(news.objectID)}
-                              style={{width:'180px', 
-                              border:'2px solid black', 
-                              margin:'2rem'}} key={news.objectID}>
-                                <h3>{news.title}</h3>
-                                <Link to={`/infodata/${news.objectID}`}>more info</Link>
-                              </div>
-                            )
-                        })}
+            <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-evenly',
+                gap: '1.3rem',
+                cursor: 'pointer'
+
+            }}>
+                {queryData.map((news) => {
+                    return (
+                        <div
+                            onClick={() => handleEventid(news.objectID)}
+                            style={{
+                                width: '180px',
+                                border: '2px solid black',
+                                margin: '2rem'
+                            }} key={news.objectID}>
+                            <h3>{news.title}</h3>
+                            <Link to={`/infodata/${news.objectID}`}>more info</Link>
                         </div>
-
+                    )
+                })}
+                
+            </div>
+            
 
 
         </>
     )
 }
 
-export {Navbar}
+export { Navbar }
