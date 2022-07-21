@@ -10,12 +10,11 @@ const Home = () => {
 
   const { inputData } = useContext(DataContext);
   const [color, setColor] = useState("#36D7B7");
-  const [isError,setIsError]=useState(false)
+  const [isError,setIsError]=useState(false);
 
   const queryUser = async () => {
     try {
       setLoading(true);
-      
       const response = await fetch(
         `https://hn.algolia.com/api/v1/search?query=${inputData}`
       );
@@ -24,15 +23,15 @@ const Home = () => {
       setLoading(false);
     } catch (error) {
       console.log("anil erro", error);
-      setIsError(true)
-    
+      setIsError(!isError)
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     let timeout = setTimeout(() => {
       queryUser();
-      console.log(queryData);
+     
     }, 500);
 
     return () => clearTimeout(timeout);
@@ -67,7 +66,6 @@ const Home = () => {
                             backgroundColor: "#8EC5FC",
                             backgroundImage:
                               "linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)",
-
                             fontSize: "16px",
                             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
                           }}
